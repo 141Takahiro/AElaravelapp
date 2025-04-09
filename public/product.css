@@ -1,0 +1,53 @@
+.maincontent {
+    width: 100%;
+}
+
+.product_main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.mobilesuit {
+    width: 50%;
+    text-align: center;
+}
+
+.mobilesuit img {
+    width: 100%;
+}
+
+article {
+    width: 40%;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    background-color: lightskyblue;
+}
+
+.subcontent {
+    width: 100%;
+}
+
+.MSlist {
+    width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+.MSlist li {
+    width: 33%;
+    text-align: center;
+}
+
+.MSlist img {
+    width: 100%;
+}

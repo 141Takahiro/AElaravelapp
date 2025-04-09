@@ -1,0 +1,93 @@
+.Message p {
+    font-size: 30px;
+    text-decoration: underline;
+}
+
+.Message a {
+    background-color: #87befd;
+    color: black;
+    font-size: 25px;
+    margin: 60px;
+}
+
+.Message {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 100px;
+    margin-top: 30px;
+}
+
+
+.purchase-btn {
+    display: inline-block;
+    text-decoration: none;
+    background: #87befd;
+    color: black;
+    width: 120px;
+    height: 120px;
+    line-height: 120px;
+    border-radius: 50%;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0px 0px 0px 5px #87befd;
+    border: dashed 1px #FFF;
+    transition: .4s;
+    font-size: large;
+}
+
+.purchase-btn:hover {
+    background: #668ad8;
+    box-shadow: 0px 0px 0px 5px #668ad8;
+  }
+  
+
+
+.currentCart {
+    text-align: center;
+    margin-bottom: 10px;
+    background-color: darkgray;
+}
+
+.cart-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    border-bottom: 1px dashed black;
+
+}
+
+.cart-item {
+    width: 50%;
+}
+
+.cart-item img {
+    width: 100%;
+}
+
+.cart-item h2 {
+    text-align: center;
+}
+
+.cart-item p {
+    text-align: center;
+}
+
+.button-area {
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.button-area button {
+    background-color: red;
+    color: white;
+    font-size: 25px;
+    border-radius: 10px; 
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.TotalPrice {
+    text-align: center;
+}

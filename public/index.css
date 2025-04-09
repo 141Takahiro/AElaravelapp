@@ -1,0 +1,22 @@
+.maincontent {
+    width: 100%;
+}
+
+.MSlist {
+    width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+.MSlist li {
+    width: 33%;
+    text-align: center;
+}
+
+.MSlist img {
+    width: 100%;
+}

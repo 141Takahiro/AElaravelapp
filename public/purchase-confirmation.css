@@ -1,0 +1,34 @@
+.container {
+    display: flex;
+    margin: 0 !important;
+    border: 0;
+    align-items: center;
+}
+
+.thanks {
+    text-align: center;
+    width: 100%;
+}
+
+.character {
+    width: 30%;
+}
+
+.character img {
+    width: 100%;
+}
+
+.character p {
+    text-align: center;
+}
+
+#comment {
+    font-size: 36px;
+    width: 70%;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}

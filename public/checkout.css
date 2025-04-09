@@ -1,0 +1,37 @@
+table {
+    width: 100%;
+    border-collapse: collapse; 
+    margin: 20px 0; 
+}
+
+th, td {
+    border: 1px solid black !important;
+    padding: 15px;
+}
+
+th {
+    background-color: #f4f4f4;
+    font-weight: bold; 
+    text-align: center; 
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr {
+    background-color: #f1f1f1;
+    text-align: center; 
+}
+.button {
+    display: flex;
+}
+
+.btn-primary {
+    background-color: chocolate !important;
+    color:#f1f1f1 !important;
+    width: 200px;
+    height: 50px;
+    font-size: 25px !important;
+    margin: auto;
+}
