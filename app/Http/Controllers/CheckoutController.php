@@ -17,4 +17,17 @@ class CheckoutController extends Controller
         'cartItems' => $cartItems,
     ]);
     }
+
+    public function updateAddress(Request $request)
+    {
+        $validated = $request->validate([
+            'address' => 'required|string|max:255',
+        ]);
+
+        $user = auth()->user();
+        $user->address = $validated['address'];
+        $user->save();
+
+        return redirect()->back();
+    }
 }

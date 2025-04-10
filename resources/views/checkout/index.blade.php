@@ -33,6 +33,24 @@
 <h3>購入者氏名: {{ auth()->user()->name }}</h3>
 <h3>配送先： {{ auth()->user()->address }}</h3>
 
+<button id="changeAddressButton">住所を変更する</button>
+<div id="addressForm" style="display: none;">
+    <form action="/update-address" method="POST">
+        @csrf
+        <label for="address">新しい住所:</label>
+        <input type="text" name="address" id="address" required>
+        <button type="submit">更新</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('changeAddressButton').addEventListener('click', function() {
+        const form = document.getElementById('addressForm');
+        form.style.display = form.style.display === 'none' ? 'block' : 'none';
+    });
+</script>
+
+
 <div class="button">
     <button type="button" class="btn btn-primary" onclick="confirmPurchase()">購入</button>
 </div>
