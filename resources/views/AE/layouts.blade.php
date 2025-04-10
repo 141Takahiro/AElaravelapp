@@ -21,7 +21,13 @@
         <img src="{{ asset('storage/photos/AElogo.jpg') }}" id="logo">
         <div id="text">
             <h1 id="philosophy"><span id="philosophy-text">FROM U.C.00 スプーンから宇宙戦艦まで</span></h1>
-            <h2 id="greeting">ようこそ、{{ Auth::user()->name }}さん</h2>
+            <div id="user-section">
+                <h2 id="greeting">ようこそ、{{ Auth::user()->name }}さん</h2>
+                <form action="/logout" method="POST">
+                    @csrf
+                    <button type="submit" class="logout-button">ログアウト</button> 
+                </form>
+            </div>
         </div>
     </div>
     <nav>
