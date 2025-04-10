@@ -24,20 +24,37 @@ a:visited {
     width: 20%;
 }
 
+#user-section {
+    display: flex;
+    margin-right: 0;
+    padding: 0;
+    text-align: right;
+    margin-left: auto; 
+    align-items: center;
+    width: 60%;
+}
+
+.logout-button {
+    font-size: 18px;
+    margin: 0;
+}
+
 #text {
     width: 80%;
+    margin-right: 0;
 }
 
 #philosophy {
-    text-align: right;
     font-family: "DFG 中楷書体", "DFP 中楷書体", "DF 中楷書体", serif;
     margin: 35px;
+    width: 90%;
+    text-align: right;
 }
 
 #greeting {
-    text-align: right;
     font-family: "DFG 中楷書体", "DFP 中楷書体", "DF 中楷書体", serif;
     margin: 35px;
+    width: 60%;
 }
 
 #philosophy-text{

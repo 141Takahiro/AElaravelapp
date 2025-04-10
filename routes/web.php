@@ -7,9 +7,17 @@ use App\Http\Controllers\CartController;//cart機能実装のため作成
 use App\Http\Controllers\CheckoutController;//決済確認画面
 use App\Http\Controllers\PurchaseController;//購入確認画面
 
+//ここからログイン画面作成のための記述
+Route::post('/logout', function () {
+    Auth::logout();
+});
+Route::get('/', function () {
+        return view('auth.login');
+    });
+//ここまでログイン画面作成のため
 
 Route::get('AE', [AEcontroller::class, 'index'])
-    ->middleware('auth');//認証画面作成のために追加//
+   ->middleware('auth');//認証画面作成のために追加//
 
 Route::get('AE/product/{id}', [AEcontroller::class, 'showProduct']);
 Auth::routes();
