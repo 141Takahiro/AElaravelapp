@@ -27,4 +27,6 @@ Route::get('/cart', [CartController::class, 'index'])->name('cart.index');//cart
 Route::delete('/cart/{id}', [CartController::class, 'destroy'])->name('cart.destroy');//delete用
 
 Route::post('/chekout', [CheckoutController::class, 'checkout'])->name('checkout');
+Route::get('/chekout', [CheckoutController::class, 'checkout']);
+Route::post('/update-address', [CheckoutController::class, 'updateAddress'])->name('update.address');
 Route::get('/purchase-confirmation', [PurchaseController::class, 'confirmation'])->name('purchase-confirmation');
