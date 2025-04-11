@@ -8,6 +8,12 @@
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
+{{--ロゴの挿入--}}
+                    <div style="text-align: center;">
+                        <img src="{{ asset('storage/photos/AElogo.jpg') }}" alt="Logo" style="width: 100px;">
+                    </div>
+{{--ここまでロゴの挿入--}}
+
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
