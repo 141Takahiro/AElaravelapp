@@ -39,6 +39,15 @@
                             </div>
                         </div>
                         
+                        {{-- 以下は郵便番号登録用に追加したもの --}}
+                        <div class="row mb-3">
+                            <label for="zipcode" class="col-md-4 col-form-label text-md-end">{{ __('Zipcode') }}</label>
+                            <div class="col-md-6">
+                                <input id="zipcode" type="text" class="form-control" name="zipcode" required autocomplete="zipcode" maxlength="8">
+                            </div>
+                        </div>
+                        {{-- 以上は郵便番号登録用に追加したもの --}}
+
                         {{-- 以下のコードは住所登録用に追加したもの --}}
                         <div class="row mb-3">
                             <label for="address" class="col-md-4 col-form-label text-md-end">{{ __('Address') }}</label>

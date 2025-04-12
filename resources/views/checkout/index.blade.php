@@ -31,15 +31,18 @@
 </table>
 <h2>合計金額: {{ number_format($TotalPrice) }}円</h2>
 <h3>購入者氏名: {{ auth()->user()->name }}</h3>
+<h3>郵便番号: {{ auth()->user()->zipcode }}</h3>
 <h3>配送先： {{ auth()->user()->address }}</h3>
 
 <button id="changeAddressButton">住所を変更する</button>
 <div id="addressForm" style="display: none;">
     <form action="/update-address" method="POST">
         @csrf
+        <label for="zipcode">新しい郵便番号:</label>
+        <input type="text" name="zipcode" id="zipcode" required maxlength="8">
         <label for="address">新しい住所:</label>
-        <input type="text" name="address" id="address" required>
-        <button type="submit">更新</button>
+        <input type="text" name="address" id="address" required style="width: 400px;">
+        <button type="submit" style="background-color: red; color: white;">更新</button>
     </form>
 </div>
 
@@ -50,9 +53,44 @@
     });
 </script>
 
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zipcodeInput = document.getElementById('zipcode');
+    
+    zipcodeInput.addEventListener('input', function () {
+        const zipcode = this.value.replace('-', '');
+        if (zipcode.length === 7) {
+            fetch(`https://zipcloud.ibsnet.co.jp/api/search?zipcode=${zipcode}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('通信に失敗しました。');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.results) {
+                        const addressData = data.results[0];
+                        const fullAddress = `${addressData.address1}${addressData.address2}${addressData.address3}`;
+                        const addressField = document.getElementById('address');
+                        if (addressField) {
+                            addressField.value = fullAddress;
+                        }
+                    } else {
+                        alert('該当する住所が見つかりませんでした。');
+                    }
+                })
+                .catch(error => {
+                    console.error(error);
+                    alert('通信に失敗しました。もう一度お試しください。');
+                });
+        }
+    }); 
+});
+</script>
+
 
 <div class="button">
-    <button type="button" class="btn btn-primary" onclick="confirmPurchase()">購入</button>
+    <button type="button" class="btn btn-primary" style="margin: 30px;" onclick="confirmPurchase()">購入</button>
 </div>
 
 <script>

@@ -22,6 +22,7 @@ class User extends Authenticatable
         'email',
         'password',
         'address', //住所を追加
+        'zipcode', //郵便番号を追加
     ];
 
     /**
