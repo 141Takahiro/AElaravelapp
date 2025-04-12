@@ -22,10 +22,12 @@ class CheckoutController extends Controller
     {
         $validated = $request->validate([
             'address' => 'required|string|max:255',
+            'zipcode' => 'required|string|regex:/^\d{3}-?\d{4}$/',
         ]);
 
         $user = auth()->user();
         $user->address = $validated['address'];
+        $user->zipcode = $validated['zipcode'];
         $user->save();
 
         return redirect()->back();
