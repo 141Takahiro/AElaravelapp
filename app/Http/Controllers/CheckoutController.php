@@ -10,6 +10,7 @@ class CheckoutController extends Controller
     public function checkout(Request $request)
     {
     $TotalPrice = $request->input('total_price');
+    session(['TotalPrice' => $TotalPrice]);
     $cartItems = auth()->user()->cartItems()->with(['user', 'product'])->get();
 
     return view('checkout.index', [
@@ -30,6 +31,12 @@ class CheckoutController extends Controller
         $user->zipcode = $validated['zipcode'];
         $user->save();
 
-        return redirect()->back();
+        $TotalPrice = session('TotalPrice');
+        $cartItems = auth()->user()->cartItems()->with(['user', 'product'])->get();
+
+        return view('checkout.index', [
+            'TotalPrice' => $TotalPrice,
+            'cartItems' => $cartItems,
+        ]);
     }
 }
