@@ -23,6 +23,8 @@ class AEcontroller extends Controller
             ->select('comment', 'review')
             ->paginate(10);
 
+        $comments->withPath(route('product.show', ['id' => $id])); //ページ先指定の為に追加//
+
         $comments = $comments->isEmpty() ? null : $comments;
         return view('AE.product', [
             'product'  => $product,

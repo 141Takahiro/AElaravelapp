@@ -19,7 +19,7 @@ Route::get('/', function () {
 Route::get('AE', [AEcontroller::class, 'index'])
    ->middleware('auth');//認証画面作成のために追加//
 
-Route::get('AE/product/{id}', [AEcontroller::class, 'showProduct']);
+Route::get('AE/product/{id}', [AEcontroller::class, 'showProduct'])->name('product.show');
 Route::post('AE/product/{id}/comment/store', [AEcontroller::class, 'commentStore'])->name('comment.store');
 Auth::routes();
 

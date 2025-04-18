@@ -51,7 +51,7 @@
         </div>
         @endforeach
         <div class="pagination">
-            {{ $comments->links() }}
+        {{ $comments->appends(request()->except('page'))->links() }}
         </div>
     @else
         <p>コメントはまだありません。</p>
