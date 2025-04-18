@@ -11,7 +11,7 @@
     <meta property="og:site_name" content="@yield('name', 'ANAHEIM ELECTRONICS')">
     <link href="{{ asset('layout.css') }}" rel="stylesheet">
     @yield('index.css')
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    @yield('script')
 </head>
 
 <body>

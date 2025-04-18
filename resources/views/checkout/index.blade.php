@@ -6,6 +6,9 @@
 @section('index.css')
 <link href="{{ asset('checkout.css') }}" rel="stylesheet">
 @endsection
+@section('script')
+    @vite(['resources/js/zipcode.js'])
+@endsection
 
 @section('maincontent')
 <h1>購入手続き</h1>
