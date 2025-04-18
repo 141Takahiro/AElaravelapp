@@ -70,7 +70,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'address' => $data['address'], // 住所を保存の為に新規追加
-
+            'zipcode' => $data['zipcode'],
         ]);
     }
 }
