@@ -56,6 +56,10 @@ textarea {
     width: 40%;
 }
 
+.pagination svg {
+    width: 40px;
+}
+
 /*ここから星のCSS*/
 
 #starRate .selected {

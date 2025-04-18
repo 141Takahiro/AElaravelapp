@@ -21,7 +21,8 @@ class AEcontroller extends Controller
         $product = Product::findOrFail($id);
         $comments = Comment::where('product_id', $id)
             ->select('comment', 'review')
-            ->get();
+            ->paginate(10);
+
         $comments = $comments->isEmpty() ? null : $comments;
         return view('AE.product', [
             'product'  => $product,

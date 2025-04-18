@@ -50,9 +50,13 @@
             <p>{{ $comment->comment }}</p>
         </div>
         @endforeach
+        <div class="pagination">
+            {{ $comments->links() }}
+        </div>
     @else
         <p>コメントはまだありません。</p>
     @endif
+
 </section>
 
 <section class="comment-form">

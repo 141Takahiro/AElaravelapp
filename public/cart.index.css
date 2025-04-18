@@ -33,6 +33,7 @@
     border: dashed 1px #FFF;
     transition: .4s;
     font-size: large;
+    margin: 50px;
 }
 
 .purchase-btn:hover {
