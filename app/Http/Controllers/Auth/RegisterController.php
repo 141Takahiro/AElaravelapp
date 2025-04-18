@@ -53,7 +53,7 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'address' => ['required', 'string', 'max:255'], // 住所のバリデーションを追加
-            'zipcode' => $data['zipcode'],//郵便番号の追加
+            'zipcode' => ['required', 'string', 'regex:/^\d{3}-?\d{4}$/'],
         ]);
     }
 
