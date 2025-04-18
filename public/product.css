@@ -51,3 +51,29 @@ article {
 .MSlist img {
     width: 100%;
 }
+
+textarea {
+    width: 40%;
+}
+
+/*ここから星のCSS*/
+
+#starRate .selected {
+    color: gold;
+}
+
+#starRating {
+    display: inline-flex;
+    cursor: pointer;
+}
+
+.star {
+    font-size: 24px; 
+    color: gray;     
+    margin: 0 5px;
+    transition: color 0.3s ease; 
+}
+
+.star.selected {
+    color: gold;  
+}
