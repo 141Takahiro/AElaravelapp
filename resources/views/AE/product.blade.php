@@ -101,8 +101,10 @@
                 starsDiv.appendChild(span);
             });
         }
-
-        updateStars(0);
+        
+        const initialRating = 5;
+        updateStars(initialRating);
+        reviewInput.value = initialRating;
     });
 </script>
 @endsection
